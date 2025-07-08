@@ -29,15 +29,15 @@ public class LoginServlet extends HttpServlet {
             if (result.verified) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                response.sendRedirect("dashboard.jsp");
+                response.sendRedirect("route?action=dashboard");
             } else {
                 request.setAttribute("error", "Mot de passe incorrect");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("/views/login.jsp").forward(request, response);
             }
 
         } else {
             request.setAttribute("error", "Aucun utilisateur avec cet email");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/login.jsp").forward(request, response);
         }
     }
 }
