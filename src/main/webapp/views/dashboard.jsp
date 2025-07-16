@@ -24,10 +24,10 @@
     <!-- ✅ Formulaire d’ajout -->
     <form method="post" action="add-password">
         <h3>➕ Enregistrer un mot de passe</h3>
-        <label>Nom du site :</label><br>
+        <label for="site">Nom du site :</label><br>
         <input type="text" name="site" required><br>
 
-        <label>Identifiant / Email :</label><br>
+        <label >Identifiant / Email :</label><br>
         <input type="text" name="login" required><br>
 
         <label>Mot de passe :</label><br>

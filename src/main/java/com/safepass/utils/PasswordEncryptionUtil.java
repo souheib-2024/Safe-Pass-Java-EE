@@ -7,7 +7,7 @@ import java.util.Base64;
 
 public class PasswordEncryptionUtil {
 
-	private static final String SECRET_KEY = "safepassAES123456";
+	private static final String SECRET_KEY = "safepassAES12345";
 	private static final String ALGORITHM = "AES";
 
     public static String encrypt(String password) throws Exception {

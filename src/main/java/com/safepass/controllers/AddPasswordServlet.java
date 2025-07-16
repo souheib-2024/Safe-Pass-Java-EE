@@ -22,13 +22,17 @@ public class AddPasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false);
-        User user = (User) session.getAttribute("user");
+    	HttpSession session = request.getSession(false);
+    	if (session == null) {
+    	    response.sendRedirect("route?action=login");
+    	    return;
+    	}
 
-        if (user == null) {
-            response.sendRedirect("route?action=login");
-            return;
-        }
+    	User user = (User) session.getAttribute("user");
+    	if (user == null) {
+    	    response.sendRedirect("route?action=login");
+    	    return;
+    	}
 
         String site = request.getParameter("site");
         String login = request.getParameter("login");
